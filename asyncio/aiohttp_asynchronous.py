@@ -23,4 +23,4 @@ if __name__ == '__main__':
     t1 = time.perf_counter()
     asyncio.run(main())
     t2 = time.perf_counter()
-    print(t2 - t1)
+    print(f'execution time : {t2 - t1} sec ')

@@ -1,0 +1,16 @@
+PostgreSQL - How to find and kill a query?
+
+Sometimes, we might need to find and kill the queries that cause lock.
+
+Find all the processes that are running:
+
+SELECT * FROM pg_stat_activity WHERE state = 'active';
+
+So you can identify the PID of the hanging/long running query you want to kill. Cancel the query with the help of below query.
+
+SELECT pg_cancel_backend(PID);
+
+
+If you want to kill the session directly, run this instead:
+
+SELECT pg_terminate_backend(PID);
